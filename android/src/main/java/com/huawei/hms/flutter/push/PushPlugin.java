@@ -366,7 +366,7 @@ public class PushPlugin implements FlutterPlugin, MethodCallHandler, ActivityAwa
     private void registerBackgroundMessageHandler(final MethodCall call, final Result result) {
         try {
             long pluginCallbackHandle = Objects.requireNonNull(call.argument("rawHandle"));
-            long userCallbackHandle = Objects.requireNonNull(call.argument("rawCallback"));
+            int userCallbackHandle = Objects.requireNonNull(call.argument("rawCallback"));
 
             SharedPreferences prefs = context.getSharedPreferences(Core.PREFERENCE_NAME, Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = prefs.edit();
